@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 // import { ParcelLab } from '@parcellab/js-plugin/bundle/module.min'
 import '@parcellab/js-plugin/bundle/module.min.css'
@@ -14,13 +13,14 @@ export default function Home() {
       
       const options = { rerouteButton: 'left', show_searchForm: 'true', userId: '1613928' };
       const plPlugin = new ParcelLab('#pl-trace', options);
+      plPlugin.initialize()
     }
 
     if (divRef.current) {
       console.log(divRef.current)
       loadPlPlugin()
     }
-  }, [divRef.current])
+  }, [])
 
   return (
     <div className={styles.container}>
